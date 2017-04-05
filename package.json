@@ -1,7 +1,7 @@
 {
   "name": "nulpas-gulp-starter-kit",
   "description": "Gulp Base Application for Angular 1.x developments.",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "main": "index.js",
   "repository": {
     "type": "git",
