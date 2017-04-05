@@ -1,6 +1,6 @@
 # Some Useful Links
 
-##AngularJS
+## AngularJS
 https://angularjs.org/
 
 ## Angular Material (it is both a UI Component framework and a reference implementation of Google's Material Design Specification)
