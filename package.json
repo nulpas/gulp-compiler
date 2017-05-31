@@ -1,7 +1,7 @@
 {
-  "name": "nulpas-gulp-starter-kit",
+  "name": "gulp-starter-kit",
   "description": "Gulp Base Application for Angular 1.x developments.",
-  "version": "0.6.2",
+  "version": "0.7.0",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -14,12 +14,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "preinstall": "npm install npm -g && npm install bower gulp-cli -g",
     "postinstall": "npm prune"
   },
   "dependencies": {
     "event-stream": "^3.3.4",
-    "fs-extra": "^2.1.2",
+    "fs-extra": "^3.0.1",
     "gulp": "^3.9.1",
     "gulp-angular-filesort": "^1.1.1",
     "gulp-angular-templatecache": "^2.0.0",
@@ -27,15 +26,15 @@
     "gulp-cssnano": "^2.1.2",
     "gulp-flatten": "^0.3.1",
     "gulp-htmlmin": "^3.0.0",
-    "gulp-imagemin": "^3.1.1",
+    "gulp-imagemin": "^3.3.0",
     "gulp-inject": "^4.2.0",
     "gulp-inject-string": "^1.1.0",
     "gulp-jscs": "^4.0.0",
     "gulp-jshint": "^2.0.4",
     "gulp-rev": "^7.1.2",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.3.1",
-    "gulp-uglify": "^2.0.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
     "gulp-watch": "^4.3.11",
     "gulp-webserver": "^0.9.1",
     "jshint": "^2.9.4",
