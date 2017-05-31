@@ -1,7 +1,7 @@
 {
   "name": "gulp-starter-kit",
   "description": "Gulp Base Application for Angular 1.x developments.",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -13,9 +13,7 @@
   ],
   "license": "MIT",
   "private": true,
-  "scripts": {
-    "postinstall": "npm prune"
-  },
+  "scripts": {},
   "dependencies": {
     "event-stream": "^3.3.4",
     "fs-extra": "^3.0.1",
