@@ -1,11 +1,11 @@
 {
   "name": "gulp-starter-kit",
   "description": "Gulp Base Application for Angular 1.x developments.",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:nulpas/gulp-starter-kit.git"
+    "url": "ssh://git@github.com:nulpas/gulp-starter-kit.git"
   },
   "author": "Nul Pàs <manu@lunaeme.com> (https://twitter.com/NulPas)",
   "contributors": [
