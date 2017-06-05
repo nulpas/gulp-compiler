@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nulpas/gulp-starter-kit.git"
+    "url": "git@github.com:nulpas/gulp-starter-kit.git"
   },
   "author": "Nul Pàs <manu@lunaeme.com> (https://twitter.com/NulPas)",
   "contributors": [
