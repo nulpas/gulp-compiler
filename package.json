@@ -1,18 +1,17 @@
 {
-  "name": "gulp-starter-kit",
-  "description": "Gulp Base Application for Angular 1.x developments.",
-  "version": "0.7.2",
+  "name": "gulp-compiler",
+  "description": "Gulp Base Compiler for Angular 1.x developments",
+  "version": "0.7.3",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com:nulpas/gulp-starter-kit.git"
+    "url": "ssh://git@github.com:nulpas/gulp-compiler.git"
   },
   "author": "Nul Pàs <manu@lunaeme.com> (https://twitter.com/NulPas)",
   "contributors": [
     "Luis Murciano <luis.murciano.renedo@everis.com> (https://www.linkedin.com/in/luismurciano/)"
   ],
   "license": "MIT",
-  "private": true,
   "scripts": {},
   "dependencies": {
     "event-stream": "^3.3.4",
