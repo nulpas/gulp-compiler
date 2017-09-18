@@ -46,7 +46,8 @@
         jsHeadFilter: [
           '**/jquery.js',
           '**/angular.js',
-          '**/Chart.js'
+          '**/Chart.js',
+          '**/lodash.js'
         ],
         jsVendorFilter: '**/!(jquery|angular|Chart).js'
       },
