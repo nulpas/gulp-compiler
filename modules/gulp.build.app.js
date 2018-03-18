@@ -111,17 +111,17 @@
 
   //## LIFE: Compile JSON files into dist directory
   gulp.task('json', function() {
-    return gulp.src($.source.app.json.all)
+    return gulp.src($.source.app.json.all, {read: false})
       .pipe(gulp.dest($.paths.dist.jsonApp));
   });
   //## DEVELOPMENT: Compile JSON files into dist-dev directory
   gulp.task('json:dev', function() {
-    return gulp.src($.source.app.json.all)
+    return gulp.src($.source.app.json.all, {read: false})
       .pipe(gulp.dest($.paths.dev.jsonApp));
   });
   //## DEVELOPMENT: Compile JSON files into dist-dev-concat directory
   gulp.task('json:dev:concat', function() {
-    return gulp.src($.source.app.json.all)
+    return gulp.src($.source.app.json.all, {read: false})
       .pipe(gulp.dest($.paths.devConcat.jsonApp));
   });
 
