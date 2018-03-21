@@ -1,7 +1,7 @@
 {
   "name": "gulp-compiler",
   "description": "Gulp Base Compiler for Angular 1.x developments",
-  "version": "0.7.9",
+  "version": "0.7.10",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
     "gulp-flatten": "^0.4.0",
     "gulp-htmlmin": "^4.0.0",
     "gulp-imagemin": "^4.1.0",
-    "gulp-inject": "4.3.0",
+    "gulp-inject": "^4.3.1",
     "gulp-inject-string": "^1.1.1",
     "gulp-jscs": "^4.1.0",
     "gulp-jshint": "^2.1.0",
