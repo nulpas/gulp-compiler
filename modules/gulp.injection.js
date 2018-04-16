@@ -51,7 +51,7 @@
   };
 
   //## LIFE: Inject into index.html all compiled JS and CSS files
-  gulp.task('inject', ['build'], function() {
+  gulp.task('inject', gulp.series('build'), function() {
     var sourcesHead = gulp.src([$.source.deploy.dist.jsHeadFile]);
     var sourcesVendor = gulp.src([$.source.deploy.dist.jsVendorFile, $.source.deploy.dist.cssVendorFile]);
     var sourcesApp = gulp.src([$.source.deploy.dist.jsAppFile, $.source.deploy.dist.cssAppFile]);
@@ -64,7 +64,7 @@
   });
 
   //## DEVELOPMENT: Inject into index.html all compiled JS and CSS files
-  gulp.task('inject:dev', ['build:dev'], function() {
+  gulp.task('inject:dev', gulp.series('build:dev'), function() {
     var sourceHeadJS = gulp.src($.source.deploy.dev.jsHead);
     var sourcesVendorJS = gulp.src($.source.deploy.dev.jsVendor);
     var sourcesVendorCSS = gulp.src($.source.deploy.dev.cssVendor);
@@ -80,7 +80,7 @@
       .pipe(gulp.dest($.paths.dev.root));
   });
   //## DEVELOPMENT: Inject into index.html all compiled JS and CSS files in concat style
-  gulp.task('inject:dev:concat', ['build:dev:concat'], function() {
+  gulp.task('inject:dev:concat', gulp.series('build:dev:concat'), function() {
     var sourcesHead = gulp.src([$.source.deploy.devConcat.jsHeadFile]);
     var sourcesVendor = gulp.src([$.source.deploy.devConcat.jsVendorFile, $.source.deploy.devConcat.cssVendorFile]);
     var sourcesApp = gulp.src([$.source.deploy.devConcat.jsAppFile, $.source.deploy.devConcat.cssAppFile]);
@@ -93,19 +93,19 @@
   });
 
   //## DEVELOPMENT: Inject into index.html partial compiled files for watch tasks
-  gulp.task('inject.js.app:dev', ['app:dev'], function() {
+  gulp.task('inject.js.app:dev', gulp.series('app:dev'), function() {
     var sourcesJS = gulp.src($.source.deploy.dev.jsApp);
     return gulp.src($.paths.dev.index)
       .pipe(inject(sourcesJS.pipe(fileSort()), configInjectAppDev))
       .pipe(gulp.dest($.paths.dev.root));
   });
-  gulp.task('inject.css.app:dev', ['sass:dev'], function() {
+  gulp.task('inject.css.app:dev', gulp.series('sass:dev'), function() {
     var sourcesCSS = gulp.src($.source.deploy.dev.cssApp);
     return gulp.src($.paths.dev.index)
       .pipe(inject(sourcesCSS, configInjectAppDev))
       .pipe(gulp.dest($.paths.dev.root));
   });
-  gulp.task('inject.all.vendor:dev', ['vendor:dev', 'vendor.styles:dev'], function() {
+  gulp.task('inject.all.vendor:dev', gulp.parallel('vendor:dev', 'vendor.styles:dev'), function() {
     var sourcesHeadJS = gulp.src($.source.deploy.dev.jsHead);
     var sourcesVendorJS = gulp.src($.source.deploy.dev.jsVendor);
     var sourcesVendorCSS = gulp.src($.source.deploy.dev.cssVendor);
