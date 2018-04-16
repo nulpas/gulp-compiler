@@ -1,7 +1,7 @@
 {
   "name": "gulp-compiler",
   "description": "Gulp Base Compiler for Angular 1.x developments",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "main": "index.js",
   "repository": {
     "type": "git",
