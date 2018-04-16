@@ -15,7 +15,6 @@
       .pipe(esLint.format())
       .pipe(esLint.failAfterError());
   });
-
   gulp.task('debug:watch', function() {
     return gulp.src(checkFilesArray)
       .pipe(esLint())

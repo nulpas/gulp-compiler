@@ -11,7 +11,7 @@
   var devConcatPort = 8787;
 
   //# LIFE: Web Server
-  gulp.task('server', gulp.series('index.min'), function() {
+  gulp.task('server', ['index.min'], function() {
     gulp.src($.paths.dist.root)
       .pipe(webServer({
         port: lifePort,
@@ -26,7 +26,7 @@
   });
 
   //# DEVELOPMENT: Web Server
-  gulp.task('server:dev', gulp.series('inject:dev'), function() {
+  gulp.task('server:dev', ['inject:dev'], function() {
     gulp.src($.paths.dev.root)
       .pipe(webServer({
         port: devPort,
@@ -40,7 +40,7 @@
       }));
   });
   //# DEVELOPMENT: Web Server
-  gulp.task('server:dev:concat', gulp.series('inject:dev:concat'), function() {
+  gulp.task('server:dev:concat', ['inject:dev:concat'], function() {
     gulp.src($.paths.devConcat.root)
       .pipe(webServer({
         port: devConcatPort,
