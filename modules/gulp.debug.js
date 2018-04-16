@@ -3,28 +3,22 @@
 
   //# Load external modules
   var gulp = require('gulp');
-  var jshint = require('gulp-jshint');
-  var jscs = require('gulp-jscs');
+  var esLint = require('gulp-eslint');
   var $ = require('../gulpfile.tree');
 
   var checkFilesArray = $.source.app.javascript.config.concat([$.source.app.javascript.all]);
 
-  //## DEVELOPMENT: Search for some Best Practices errors in JS files and show them
-  gulp.task('debug:best.practices', function() {
+  //## DEVELOPMENT: Search for some Code Style and Best Practices errors in JS files and show them:
+  gulp.task('debug:compile', function() {
     return gulp.src(checkFilesArray)
-      .pipe(jshint('./.jshintrc'))
-      .pipe(jshint.reporter('jshint-stylish'))
-      .pipe(jshint.reporter('fail'));
+      .pipe(esLint())
+      .pipe(esLint.format())
+      .pipe(esLint.failAfterError());
   });
 
-  //## DEVELOPMENT: Search for some Code Style errors in JS files and show them
-  gulp.task('debug:code.style', function() {
+  gulp.task('debug:watch', function() {
     return gulp.src(checkFilesArray)
-      .pipe(jscs())
-      .pipe(jscs.reporter())
-      .pipe(jscs.reporter('fail'));
+      .pipe(esLint())
+      .pipe(esLint.format());
   });
-
-  //## DEVELOPMENT: Join all debugging tasks
-  gulp.task('debug', ['debug:best.practices', 'debug:code.style']);
 })();
