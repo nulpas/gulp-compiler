@@ -1,7 +1,7 @@
 {
   "name": "gulp-compiler",
   "description": "Gulp Base Compiler for Angular 1.x developments",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
   "dependencies": {
     "event-stream": "^3.3.4",
     "fs-extra": "^5.0.0",
-    "gulp": "gulpjs/gulp.git#4.0",
+    "gulp": "^3.9.1",
     "gulp-angular-filesort": "^1.2.1",
     "gulp-angular-templatecache": "^2.2.0",
     "gulp-concat": "^2.6.1",

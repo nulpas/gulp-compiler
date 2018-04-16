@@ -17,20 +17,16 @@
   //# SUB-TASKS ####################
 
   //## LIFE: Compose all building tasks
-  gulp.task('build', gulp.parallel('build.app', 'build.styles', 'build.images'));
+  gulp.task('build', ['build.app', 'build.styles', 'build.images']);
   //## DEVELOPMENT: Compose all building tasks without concat and obfuscation
-  gulp.task('build:dev', gulp.parallel('build.app:dev', 'build.styles:dev', 'build.images:dev'));
+  gulp.task('build:dev', ['build.app:dev', 'build.styles:dev', 'build.images:dev']);
   //## DEVELOPMENT: Compose all building tasks without obfuscation but concat
-  gulp.task('build:dev:concat', gulp.parallel(
-    'build.app:dev:concat',
-    'build.styles:dev:concat',
-    'build.images:dev:concat'
-  ));
+  gulp.task('build:dev:concat', ['build.app:dev:concat', 'build.styles:dev:concat', 'build.images:dev:concat']);
 
   //# MIN INDEX.HTML  ####################
 
   //## LIFE: Reduce minimum index.html file
-  gulp.task('index.min', gulp.parallel('inject'), function() {
+  gulp.task('index.min', ['inject'], function() {
     return gulp.src($.paths.dist.index)
       .pipe(htmlMin({
         collapseBooleanAttributes: true,
@@ -45,15 +41,15 @@
   });
 
   //# DEVELOP TASKS ################################################################
-  gulp.task('dist', gulp.series('clean', 'server'));
-  gulp.task('dev', gulp.series('clean:dev', 'debug:watch', 'server:dev', 'watch:dev'));
-  gulp.task('dev:concat', gulp.series('clean:dev:concat', 'debug:watch', 'server:dev:concat', 'watch:dev:concat'));
+  gulp.task('dist', ['clean', 'server']);
+  gulp.task('dev', ['clean:dev', 'debug:compile', 'server:dev', 'watch:dev']);
+  gulp.task('dev:concat', ['clean:dev:concat', 'debug:compile', 'server:dev:concat', 'watch:dev:concat']);
 
   //# DEPLOY TASKS #################################################################
-  gulp.task('deploy:dist', gulp.series('clean', 'index.min'));
-  gulp.task('deploy:dev', gulp.series('clean:dev', 'debug:compile', 'inject:dev'));
-  gulp.task('deploy:dev:concat', gulp.series('clean:dev:concat', 'debug:compile', 'inject:dev:concat'));
+  gulp.task('deploy:dist', ['clean', 'index.min']);
+  gulp.task('deploy:dev', ['clean:dev', 'debug:watch', 'inject:dev']);
+  gulp.task('deploy:dev:concat', ['clean:dev:concat', 'debug:watch', 'inject:dev:concat']);
 
   //# DEFAULT TASK #################################################################
-  gulp.task('default', gulp.parallel('dev'));
+  gulp.task('default', ['dev']);
 })();

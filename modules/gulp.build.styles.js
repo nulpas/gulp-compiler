@@ -90,13 +90,9 @@
   /*# COMPILATION ################## */
 
   /*## LIFE: Join all building styles tasks */
-  gulp.task('build.styles', gulp.parallel('vendor.styles', 'sass', 'font'));
+  gulp.task('build.styles', ['vendor.styles', 'sass', 'font']);
 
   /*## DEVELOPMENT: Join all building styles tasks */
-  gulp.task('build.styles:dev', gulp.parallel('vendor.styles:dev', 'sass:dev', 'font:dev'));
-  gulp.task('build.styles:dev:concat', gulp.parallel(
-    'vendor.styles:dev:concat',
-    'sass:dev:concat',
-    'font:dev:concat'
-  ));
+  gulp.task('build.styles:dev', ['vendor.styles:dev', 'sass:dev', 'font:dev']);
+  gulp.task('build.styles:dev:concat', ['vendor.styles:dev:concat', 'sass:dev:concat', 'font:dev:concat']);
 })();

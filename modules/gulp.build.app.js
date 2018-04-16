@@ -146,14 +146,9 @@
   //# COMPILATION ####################
 
   //## LIFE: Join all building tasks
-  gulp.task('build.app', gulp.parallel('vendor', 'app', 'json', 'index'));
+  gulp.task('build.app', ['vendor', 'app', 'json', 'index']);
 
   //## DEVELOPMENT: Join all building tasks
-  gulp.task('build.app:dev', gulp.parallel('vendor:dev', 'app:dev', 'json:dev', 'index:dev'));
-  gulp.task('build.app:dev:concat', gulp.parallel(
-    'vendor:dev:concat',
-    'app:dev:concat',
-    'json:dev:concat',
-    'index:dev:concat'
-  ));
+  gulp.task('build.app:dev', ['vendor:dev', 'app:dev', 'json:dev', 'index:dev']);
+  gulp.task('build.app:dev:concat', ['vendor:dev:concat', 'app:dev:concat', 'json:dev:concat', 'index:dev:concat']);
 })();
