@@ -15,7 +15,7 @@
       gulp.start('clean:dev', 'inject:dev');
     });
     watch(checkFilesArray, function() {
-      gulp.start('debug');
+      gulp.start('debug:watch');
     });
     watch($.source.app.html.tpl, function() {
       gulp.start('clean.js.app:dev', 'inject.js.app:dev');
@@ -43,7 +43,7 @@
       gulp.start('clean:dev:concat', 'inject:dev:concat');
     });
     watch(checkFilesArray, function() {
-      gulp.start('debug');
+      gulp.start('debug:watch');
     });
     watch($.source.app.html.tpl, function() {
       gulp.start('clean.js.app:dev:concat', 'app:dev:concat');
