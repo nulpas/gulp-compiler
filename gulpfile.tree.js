@@ -49,7 +49,7 @@
           '**/Chart.js',
           '**/lodash.js'
         ],
-        jsVendorFilter: '**/!(jquery|angular|Chart).js'
+        jsVendorFilter: '**/!(jquery|angular|Chart|lodash).js'
       },
       font: {
         all: [
