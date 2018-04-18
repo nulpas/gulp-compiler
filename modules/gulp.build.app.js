@@ -53,7 +53,7 @@
       .pipe(uglify())
       .pipe(rev())
       .pipe(gulp.dest($.paths.dist.jsApp));
-    gulp.src(bower($.files.javascript.jsVendorFilter))
+    return gulp.src(bower($.files.javascript.jsVendorFilter))
       .pipe(concat($.files.javascript.vendor))
       .pipe(uglify())
       .pipe(rev())
@@ -64,7 +64,7 @@
     gulp.src(bower($.files.javascript.jsHeadFilter))
       .pipe(flatten())
       .pipe(gulp.dest($.paths.dev.jsHead));
-    gulp.src(bower($.files.javascript.jsVendorFilter))
+    return gulp.src(bower($.files.javascript.jsVendorFilter))
       .pipe(flatten())
       .pipe(gulp.dest($.paths.dev.jsVendor));
   });
@@ -75,7 +75,7 @@
       .pipe(concat($.files.javascript.head))
       .pipe(sourceMaps.write('.'))
       .pipe(gulp.dest($.paths.devConcat.jsApp));
-    gulp.src(bower($.files.javascript.jsVendorFilter))
+    return gulp.src(bower($.files.javascript.jsVendorFilter))
       .pipe(sourceMaps.init())
       .pipe(concat($.files.javascript.vendor))
       .pipe(sourceMaps.write('.'))
